@@ -10,7 +10,7 @@ logging.basicConfig(level=logging.DEBUG, filename='rasa_mlflow_deploy.log', file
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-MLFLOW_TRACKING_URI = "http://azure-mlflow.alltius.ai/"
+MLFLOW_TRACKING_URI = "http://azure-mlflow.ai/"
 mlflow.set_tracking_uri(MLFLOW_TRACKING_URI)
 mlflow.set_registry_uri(MLFLOW_TRACKING_URI)
 
@@ -76,3 +76,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
