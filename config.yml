@@ -1,0 +1,23 @@
+language: en
+pipeline:
+  - name: WhitespaceTokenizer
+  - name: RegexFeaturizer
+  - name: LexicalSyntacticFeaturizer
+  - name: CountVectorsFeaturizer        
+  - name: CountVectorsFeaturizer         
+    analyzer: char_wb
+    min_ngram: 3
+    max_ngram: 5
+  - name: DIETClassifier
+    epochs: 200
+    transformer_size: 256
+    number_of_transformer_layers: 2
+    embedding_dimension: 300
+    batch_strategy: balanced
+    constrain_similarities: true
+    random_seed: 2024
+    learning_rate: 0.0001
+    entity_recognition: true
+    ranking_length: 5
+    multi_label: true                    
+  - name: EntitySynonymMapper
